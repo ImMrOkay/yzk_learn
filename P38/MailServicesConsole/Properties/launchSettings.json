@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "MailServicesConsole": {
+      "commandName": "Project",
+      "environmentVariables": {
+        "SmtpServer": "hgg.com"
+      }
+    }
+  }
+}
