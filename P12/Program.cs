@@ -23,10 +23,12 @@ namespace P12
                 stringBuilder.Append("Hello!\n");
             }
 
-            // 异步写入，下面这段代码执行起来就好像在执行for循环一样
-            await File.WriteAllTextAsync(fileName, stringBuilder.ToString());// 写一个，返回一次
-            string s = await File.ReadAllTextAsync(fileName);                // 读一个，返回一次
-            Console.WriteLine(s);                                            // 收到一个s，打印一个s
+            // 异步写入,await直到写完
+            await File.WriteAllTextAsync(fileName, stringBuilder.ToString());
+
+            // 下面这段代码执行起来就好像在执行for循环一样
+            string s = await File.ReadAllTextAsync(fileName);                
+            Console.WriteLine(s);                            
         }
     }
 }
