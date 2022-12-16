@@ -10,6 +10,7 @@ namespace EfCoreMySql
     {
         public DbSet<Book> Books { get; set; }
         public DbSet<Person> Persons { get; set; }
+        public DbSet<Dog> Dogs { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -20,6 +21,17 @@ namespace EfCoreMySql
 
             // 配置连接字符串
             optionsBuilder.UseMySql(connectionString, serverVersion);
+
+            //// 简单日志，将生成的SQL输出到控制台
+            //optionsBuilder.LogTo(msg =>
+            //{
+            //    // 过滤不需要的消息
+            //    if (!msg.Contains("CommandExecuting"))
+            //    {
+            //        return;
+            //    }
+            //    Console.WriteLine(msg);
+            //});
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)

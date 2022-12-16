@@ -46,6 +46,20 @@ namespace EfCoreMySql.Migrations
                     b.ToTable("T_Books", (string)null);
                 });
 
+            modelBuilder.Entity("EfCoreMySql.Dog", b =>
+                {
+                    b.Property<long>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bigint");
+
+                    b.Property<string>("Name")
+                        .HasColumnType("longtext");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Dogs");
+                });
+
             modelBuilder.Entity("EfCoreMySql.Person", b =>
                 {
                     b.Property<long>("Id")
