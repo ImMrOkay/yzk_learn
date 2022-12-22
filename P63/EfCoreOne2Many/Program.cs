@@ -54,6 +54,15 @@ namespace EfCoreOne2Many
 
                 #endregion
 
+                #region P71 基于关系的复杂查询
+
+                var articles = myDbContext.Comments.Where(c => c.Message.Contains("微软")).Select(c2 => c2.Article).Distinct();
+                foreach (var article1 in articles)
+                {
+                    Console.WriteLine($"{article1.Id},{article1.Title}");
+                }
+                #endregion
+
             }
         }
 
